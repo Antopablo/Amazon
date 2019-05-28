@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace Amazon
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour Page_Shop.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Page_Shop : Page
     {
-        public MainWindow()
+        public Page_Shop()
         {
             InitializeComponent();
         }
-
     }
 }

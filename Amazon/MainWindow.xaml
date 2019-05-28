@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Amazon"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Accueil" Height="450" Width="800">
     <Grid>
         
+        <TabControl Margin="0,0,-0.4,27">
+            <TabItem Header="Shop" Width="256"  Height="35">
+                <Frame Source="Page_Shop.xaml"/>
+            </TabItem>
+            
+            <TabItem Header="Mon Compte" Width="256"  Height="35">
+                <Frame Source="Page_Mon_Compte.xaml"/>
+            </TabItem>
+            
+            <TabItem Header="Admin" Width="256"  Height="35">
+                <Frame Source="Page_Admin.xaml"/>
+            </TabItem>
+
+        </TabControl>
+        <StatusBar Margin="0,393,-0.4,0" Background="Gray"/>
+
+
     </Grid>
 </Window>
