@@ -15,11 +15,10 @@ using System.Windows.Shapes;
 
 namespace Amazon
 {
-    /// <summary>
-    /// Logique d'interaction pour Page_Shop.xaml
-    /// </summary>
+  
     public partial class Page_Shop : Page
     {
+        
         public Page_Shop()
         {
             InitializeComponent();

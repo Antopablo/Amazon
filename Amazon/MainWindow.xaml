@@ -10,7 +10,7 @@
         
         <TabControl Margin="0,0,-0.4,27">
             <TabItem Header="Shop" Width="256"  Height="35">
-                <Frame Source="Page_Shop.xaml"/>
+                <Frame Name="name_pageShop" Source="Page_Shop.xaml"/>
             </TabItem>
             
             <TabItem Header="Mon Compte" Width="256"  Height="35">

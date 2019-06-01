@@ -68,6 +68,14 @@
     <Compile Include="Migrations\201905281449582_init.Designer.cs">
       <DependentUpon>201905281449582_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905290652590_créa_visu.cs" />
+    <Compile Include="Migrations\201905290652590_créa_visu.Designer.cs">
+      <DependentUpon>201905290652590_créa_visu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905290931433_BDD.cs" />
+    <Compile Include="Migrations\201905290931433_BDD.Designer.cs">
+      <DependentUpon>201905290931433_BDD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Page_Shop.xaml.cs">
       <DependentUpon>Page_Shop.xaml</DependentUpon>
@@ -120,6 +128,12 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201905281449582_init.resx">
       <DependentUpon>201905281449582_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905290652590_créa_visu.resx">
+      <DependentUpon>201905290652590_créa_visu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905290931433_BDD.resx">
+      <DependentUpon>201905290931433_BDD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

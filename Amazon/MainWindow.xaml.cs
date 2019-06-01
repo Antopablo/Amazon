@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,10 +22,20 @@ namespace Amazon
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ApplicationContext _db;
+        public ApplicationContext DB
+        {
+            get { return _db; }
+            set { _db = value; }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+            DB = new ApplicationContext();
+            DB.Liste_Article.ToList();
+            MessageBox.Show("Nombre d'items : " + DB.Liste_Article.Count(), "Initialisation", MessageBoxButton.OK, MessageBoxImage.Information);
+            ((Page_Shop)name_pageShop.Content).Data_Grid_Article.ItemsSource = DB.Liste_Article.Local;
         }
-
     }
 }

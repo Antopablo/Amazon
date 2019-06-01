@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace Amazon
 {
     [Table("UTILISATEUR")]
-    class Utilisateur
+    public class Utilisateur : INotifyPropertyChanged
     {
         public enum DROIT
         {
@@ -37,11 +38,47 @@ namespace Amazon
         public int Id { get; set; }
 
         [Column("Pseudo")]
-        public string Pseudo { get; set; }
-        [Column("Password")]
-        public string Password { get; set; }
+        private string _pseudo;
 
-        [Column("Right")]
+        public string Pseudo
+        {
+            get { return _pseudo; }
+            set
+            {
+                if (this._pseudo != value)
+                {
+                    this._pseudo = value;
+                    this.NotifyPropertyChanged("Pseudo");
+                }
+            }
+        }
+
+        [Column("Password")]
+        private string _password;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public string Password
+        {
+            get { return _password; }
+            set
+            {
+                if (this._password != value)
+                {
+                    this._password = value;
+                    this.NotifyPropertyChanged("Password");
+                }
+            }
+        }
+
+
+        [Column("Droit")]
         public DROIT Droit { get; set; }
+
+        public void NotifyPropertyChanged(string propName)
+        {
+            if (this.PropertyChanged != null)
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
+        }
     }
 }

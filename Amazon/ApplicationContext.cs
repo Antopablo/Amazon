@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Amazon
 {
-    class ApplicationContext : DbContext
+    public class ApplicationContext : DbContext
     {
         public DbSet<Utilisateur> Liste_Utilisateur { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -8,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace Amazon
 {
-    class Article
+    [Table("Articles")]
+    public class Article : INotifyPropertyChanged
     {
         [Key]
         public int Id { get; set; }
@@ -18,25 +20,57 @@ namespace Amazon
         private int _PrixU;
         private string _Description;
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public Article(string Nom, int PrixU, string Description)
+        {
+            _EstVendable = true;
+            _Nom = Nom;
+            _PrixU = PrixU;
+            _Description = Description;
+        }
+
+        public Article()
+        { }
+
         [Column("Description")]
         public string Description
         {
             get { return _Description; }
-            set { _Description = value; }
+            set {
+                if (this._Description != value)
+                {
+                    this._Description = value;
+                    this.NotifyPropertyChanged("Description");
+                }
+            }
         }
 
         [Column("PrixU")]
         public int PrixU
         {
             get { return _PrixU; }
-            set { _PrixU = value; }
+            set
+            {
+                if (this._PrixU != value)
+                {
+                    this._PrixU = value;
+                    this.NotifyPropertyChanged("PrixU");
+                }
+            }
         }
 
         [Column("Nom")]
         public string Nom
         {
             get { return _Nom; }
-            set { _Nom = value; }
+            set {
+                if (this._Nom != value)
+                {
+                    this._Nom = value;
+                    this.NotifyPropertyChanged("Nom");
+                }
+            }
         }
 
         [Column("EstVendable")]
@@ -46,5 +80,10 @@ namespace Amazon
             set { _EstVendable = value; }
         }
 
+        public void NotifyPropertyChanged(string propName)
+        {
+            if (this.PropertyChanged != null)
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
+        }
     }
 }
