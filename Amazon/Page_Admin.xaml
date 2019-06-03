@@ -9,7 +9,9 @@
       Title="Page_Admin">
 
     <Grid Background="White">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="229,139,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Ajouter Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="38"/>
+        <Button Content="Supprimer Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="38" Margin="265,0,0,0"/>
+        <Button Content="Editer Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="38" Margin="530,0,0,0"/>
 
     </Grid>
 </Page>

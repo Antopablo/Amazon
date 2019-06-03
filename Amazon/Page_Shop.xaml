@@ -12,6 +12,7 @@
         <Button x:Name="Bouton_Login" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="103" Margin="10,10,0,0" Height="34" Click="Bouton_Login_Click"/>
         <Button x:Name="Bouton_Logout" Content="Logout" HorizontalAlignment="Left" VerticalAlignment="Top" Width="103" Margin="10,10,0,0" Height="34" Click="Bouton_Logout_Click" Visibility="Collapsed"/>
         <Button x:Name="Bouton_Sinscrire" Content="S'inscrire" HorizontalAlignment="Left" Margin="118,10,0,0" VerticalAlignment="Top" Width="115" Height="34" Click="Bouton_Sinscrire_Click"/>
+        <Button x:Name="Bouton_Retour_Shop" Content="Retour au Shop" HorizontalAlignment="Left" Margin="118,10,0,0" VerticalAlignment="Top" Width="115" Height="34" Click="Bouton_Retour_Shop_Click" Visibility="Collapsed"/>
         <Button x:Name="Bouton_Panier" Content="Panier vide" HorizontalAlignment="Left" Margin="561,10,0,0" VerticalAlignment="Top" Width="202" Height="34" Click="Bouton_Panier_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,49,0,0" VerticalAlignment="Top" Width="800"/>
         <DataGrid x:Name="Data_Grid_Article" HorizontalAlignment="Left" Height="385" Margin="10,55,0,0" VerticalAlignment="Top" Width="766" IsReadOnly="True" AutoGenerateColumns="False" SelectionMode="Single">
@@ -42,6 +43,5 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-
     </Grid>
 </Page>

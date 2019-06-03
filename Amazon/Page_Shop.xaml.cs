@@ -68,8 +68,10 @@ namespace Amazon
 
         private void Bouton_Panier_Click(object sender, RoutedEventArgs e)
         {
+            Data_Grid_Article_PANIER.Items.Refresh();
             Data_Grid_Article_PANIER.ItemsSource = mw.Connected_user.Panier;
             Data_Grid_Article_PANIER.Visibility = Visibility.Visible;
+            Bouton_Retour_Shop.Visibility = Visibility.Visible;
         }
 
         private void Supprimer_panier_Click(object sender, RoutedEventArgs e)
@@ -79,8 +81,8 @@ namespace Amazon
                 mw.Connected_user.Panier.Remove((Article)Data_Grid_Article_PANIER.SelectedCells[0].Item);
                 Bouton_Panier.Content = "Panier : " + mw.Connected_user.Panier.Count + " Article(s)";
                 CalculPanier();
-                Data_Grid_Article_PANIER.ItemsSource = null;
-                Data_Grid_Article_PANIER.ItemsSource = mw.Connected_user.Panier;
+                Data_Grid_Article_PANIER.Items.Refresh();
+
             }
             else
             {
@@ -98,6 +100,12 @@ namespace Amazon
                 tot += item.PrixU;
             }
             mw.total_BasDePage.Text = "Total du panier " + tot.ToString() + " €";
+        }
+
+        private void Bouton_Retour_Shop_Click(object sender, RoutedEventArgs e)
+        {
+            Data_Grid_Article_PANIER.Visibility = Visibility.Collapsed;
+            Bouton_Retour_Shop.Visibility = Visibility.Collapsed;
         }
     }
 }
