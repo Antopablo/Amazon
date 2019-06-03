@@ -34,6 +34,7 @@ namespace Amazon
             {
                 Droit = DROIT.ADMIN;
             }
+            Panier = new List<Article>();
         }
 
         [Key]
@@ -86,5 +87,13 @@ namespace Amazon
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-   }
+
+        private List<Article> _Panier;
+        public List<Article> Panier
+        {
+            get { return _Panier; }
+            set { _Panier = value; }
+        }
+
+    }
 }

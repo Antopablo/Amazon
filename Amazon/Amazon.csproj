@@ -84,6 +84,10 @@
     <Compile Include="Migrations\201906030947461_Test_panier.Designer.cs">
       <DependentUpon>201906030947461_Test_panier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906031148322_Essais_panier.cs" />
+    <Compile Include="Migrations\201906031148322_Essais_panier.Designer.cs">
+      <DependentUpon>201906031148322_Essais_panier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Page_Connexion.xaml.cs">
       <DependentUpon>Page_Connexion.xaml</DependentUpon>
@@ -163,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906030947461_Test_panier.resx">
       <DependentUpon>201906030947461_Test_panier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906031148322_Essais_panier.resx">
+      <DependentUpon>201906031148322_Essais_panier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -19,9 +19,11 @@ namespace Amazon
     public partial class Page_Shop : Page
     {
         public MainWindow mw { get; set; }
+        List<Article> ListeTEMP { get; set; }
         public Page_Shop()
         {
             InitializeComponent();
+            ListeTEMP = new List<Article>();
         }
 
         private void Bouton_Login_Click(object sender, RoutedEventArgs e)
@@ -38,17 +40,38 @@ namespace Amazon
 
         private void Ajoute_panier_Click (object sender, RoutedEventArgs e)
         {
-            
+            //MessageBox.Show(Data_Grid_Article.SelectedCells[0].Item.GetType().ToString());
+            if (mw.Connected_user != null)
+            {
+                mw.Connected_user.Panier = ListeTEMP;
+                mw.Connected_user.Panier.Add((Article)Data_Grid_Article.SelectedCells[0].Item);
+                MessageBox.Show("ok");
+            } else
+            {
+                MessageBox.Show("Vous devez vous connecter", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void Bouton_Logout_Click(object sender, RoutedEventArgs e)
         {
             mw.Connected_user.Droit = DROIT.GUEST;
             mw.StatusBar.Text = mw.Connected_user.Droit.ToString();
+            mw.Connected_user = null;
             Bouton_Login.Visibility = Visibility.Visible;
             Bouton_Sinscrire.Visibility = Visibility.Visible;
             Bouton_Logout.Visibility = Visibility.Collapsed;
-            
+        }
+
+        private void Bouton_Panier_Click(object sender, RoutedEventArgs e)
+        {
+            double tot = 0;
+
+            foreach (Article item in mw.Connected_user.Panier)
+            {
+                tot += item.PrixU;
+            }
+
+            mw.StatusBar.Text = tot.ToString();
         }
     }
 }

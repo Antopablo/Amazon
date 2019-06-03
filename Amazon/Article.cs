@@ -85,5 +85,10 @@ namespace Amazon
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
+
+        public override string ToString()
+        {
+            return Nom;
+        }
     }
 }

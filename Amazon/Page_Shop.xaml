@@ -12,17 +12,17 @@
         <Button Name="Bouton_Login" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="103" Margin="10,10,0,0" Height="34" Click="Bouton_Login_Click"/>
         <Button Name="Bouton_Logout" Content="Logout" HorizontalAlignment="Left" VerticalAlignment="Top" Width="103" Margin="10,10,0,0" Height="34" Click="Bouton_Logout_Click" Visibility="Collapsed"/>
         <Button Name="Bouton_Sinscrire" Content="S'inscrire" HorizontalAlignment="Left" Margin="118,10,0,0" VerticalAlignment="Top" Width="115" Height="34" Click="Bouton_Sinscrire_Click"/>
-        <Button Name="Bouton_Panier" Content="Panier : x Article(s)" HorizontalAlignment="Left" Margin="561,10,0,0" VerticalAlignment="Top" Width="202" Height="34"/>
+        <Button Name="Bouton_Panier" Content="Panier : x Article(s)" HorizontalAlignment="Left" Margin="561,10,0,0" VerticalAlignment="Top" Width="202" Height="34" Click="Bouton_Panier_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="1" Margin="0,49,0,0" VerticalAlignment="Top" Width="800"/>
-        <DataGrid Name="Data_Grid_Article" HorizontalAlignment="Left" Height="385" Margin="10,55,0,0" VerticalAlignment="Top" Width="766" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid Name="Data_Grid_Article" HorizontalAlignment="Left" Height="385" Margin="10,55,0,0" VerticalAlignment="Top" Width="766" IsReadOnly="True" AutoGenerateColumns="False" SelectionMode="Single">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" MinWidth="170"></DataGridTextColumn>
                 <DataGridTextColumn Header="Description" Binding="{Binding Description}" MinWidth="170"></DataGridTextColumn>
                 <DataGridTextColumn Header="Prix" Binding="{Binding PrixU}" MinWidth="170"></DataGridTextColumn>
-                <DataGridTemplateColumn MinWidth="250">
+                <DataGridTemplateColumn MinWidth="245">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5" Click="Ajoute_panier_Click">Ajouté au panier</Button>
+                            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5" Click="Ajoute_panier_Click">Ajouter au panier</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
