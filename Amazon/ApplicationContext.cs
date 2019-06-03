@@ -12,5 +12,6 @@ namespace Amazon
         public DbSet<Utilisateur> Liste_Utilisateur { get; set; }
 
         public DbSet<Article> Liste_Article { get; set; }
+
     }
 }

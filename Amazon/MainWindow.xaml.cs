@@ -41,6 +41,7 @@ namespace Amazon
             InitializeComponent();
             DB = new ApplicationContext();
             DB.Liste_Article.ToList();
+            DB.Liste_Utilisateur.ToList();
         }
 
         private void Name_pageShop_Loaded(object sender, RoutedEventArgs e)

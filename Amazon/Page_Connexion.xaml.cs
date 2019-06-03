@@ -19,7 +19,7 @@ namespace Amazon
     /// </summary>
     public partial class Page_Connexion : Window
     {
-        public MainWindow  mw { get; set; }
+        private MainWindow  mw { get; set; }
         public Page_Connexion(MainWindow m)
         {
             InitializeComponent();
@@ -40,14 +40,22 @@ namespace Amazon
                 {
                     usr.Droit = DROIT.USER;
                 }
-              ((MainWindow)System.Windows.Application.Current.MainWindow).StatusBar.Text = usr.Pseudo + " - " + usr.Droit.ToString();
+             
+                ((MainWindow)System.Windows.Application.Current.MainWindow).StatusBar.Text = usr.Pseudo + " - " + usr.Droit.ToString();
                 mw.Connected_user = usr;
+
                 mw.name_monCompte.Visibility = Visibility.Visible;
+
                 if (usr.Droit == DROIT.ADMIN)
                 {
                     mw.name_Admin.Visibility = Visibility.Visible;
                 }
-               
+
+               ((Page_Shop)mw.name_pageShop.Content).Bouton_Login.Visibility = Visibility.Collapsed;
+               ((Page_Shop)mw.name_pageShop.Content).Bouton_Sinscrire.Visibility = Visibility.Collapsed;
+               ((Page_Shop)mw.name_pageShop.Content).Bouton_Logout.Visibility = Visibility.Visible;
+
+
                 this.Close();
             }
             catch (Exception)

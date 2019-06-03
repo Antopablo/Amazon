@@ -77,10 +77,14 @@ namespace Amazon
         [Column("Droit")]
         public DROIT Droit { get; set; }
 
+        //[InverseProperty("Commande")]
+        //virtual public List<Commande> Liste_Panier { get; set; }
+
+
         public void NotifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-    }
+   }
 }
