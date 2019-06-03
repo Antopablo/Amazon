@@ -26,10 +26,38 @@ namespace Amazon
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Ajout_Click(object sender, RoutedEventArgs e)
         {
-            int price = Int32.Parse(Champ_Prix.Text);
-            mw.DB.Liste_Article.Add(new Article(Champ_nom.Text, price, Champ_Description.Text));
+            Content_Ajout_Article.Visibility = Visibility.Visible;
+        }
+
+        
+        private void Valider_Ajouter_Click(object sender, RoutedEventArgs e)
+            {
+                int price = Int32.Parse(Champ_Prix.Text);
+                mw.DB.Liste_Article.Add(new Article(Champ_nom.Text, price, Champ_Description.Text, (bool)CheckBox_vendable.IsChecked));
+                mw.DB.SaveChanges();
+                Champ_Description.Text = "";
+                Champ_nom.Text = "";
+                Champ_Prix.Text = "";
+                MessageBox.Show(Champ_nom.Text + " enregistré", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+        private void Bouton_Supr_Click(object sender, RoutedEventArgs e)
+        {
+            Content_Supr_Article.Visibility = Visibility.Visible;
+            Content_Supr_Article.ItemsSource = mw.DB.Liste_Article.Local;
+        }
+
+        private void Bouton_Edit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Suprimer_ADMIN_Click(object sender, RoutedEventArgs e)
+        {
+            mw.DB.Liste_Article.Remove((Article)Content_Supr_Article.SelectedCells[0].Item);
+            Content_Supr_Article.Items.Refresh();
         }
     }
 }

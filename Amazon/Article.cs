@@ -22,9 +22,9 @@ namespace Amazon
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Article(string Nom, int PrixU, string Description)
+        public Article(string Nom, int PrixU, string Description, bool Estvendable)
         {
-            _EstVendable = true;
+            _EstVendable = Estvendable;
             _Nom = Nom;
             _PrixU = PrixU;
             _Description = Description;

@@ -8,21 +8,49 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Page_Admin">
 
-    <Grid Background="White">
-        <Button Content="Ajouter Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="38" Click="Button_Click"/>
-        <Button Content="Supprimer Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270" Height="38" Margin="265,0,0,0"/>
-        <Button Content="Editer Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="38" Margin="540,0,0,0"/>
-        <Grid Name="Grid_ADMIN" HorizontalAlignment="Left" Height="412" Margin="0,38,0,-0.4" VerticalAlignment="Top" Width="800">
-            <TextBox Name="Champ_nom" HorizontalAlignment="Left" Height="45" Margin="250,39,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" />
-            <TextBox Name="Champ_Description" HorizontalAlignment="Left" Height="45" Margin="250,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
-            <TextBox Name="Champ_Prix" HorizontalAlignment="Left" Height="45" Margin="250,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
-
-            <Label Content="Nom" HorizontalAlignment="Left" Margin="182,48,0,0" VerticalAlignment="Top"/>
-            <Label Content="Description" HorizontalAlignment="Left" Margin="148,111,0,0" VerticalAlignment="Top"/>
-            <Label Content="Prix" HorizontalAlignment="Left" Margin="182,185,0,0" VerticalAlignment="Top"/>
-            <CheckBox Content="Vendable ?" HorizontalAlignment="Left" Margin="250,239,0,0" VerticalAlignment="Top" Height="45" Width="254" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-
+    <Grid Name="Grid_ADMIN" Background="White">
+        <Button Name="Bouton_Ajout" Content="Ajouter Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="256" Height="35" Click="Button_Ajout_Click"/>
+        <Button Name="Bouton_Supr" Content="Supprimer Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="256" Height="35" Margin="256,0,0,0" Click="Bouton_Supr_Click"/>
+        <Button Name="Bouton_Edit" Content="Editer Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="256" Height="35" Margin="512,0,0,0" Click="Bouton_Edit_Click"/>
+        <Grid Name="Content_Ajout_Article" HorizontalAlignment="Left" Height="412" Margin="10,43,0,-5.4" VerticalAlignment="Top" Width="780" Visibility="Collapsed">
+            <TextBox Name="Champ_nom" HorizontalAlignment="Left" Height="45" Margin="259,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" />
+            <TextBox Name="Champ_Description" HorizontalAlignment="Left" Height="45" Margin="259,98,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
+            <TextBox Name="Champ_Prix" HorizontalAlignment="Left" Height="45" Margin="259,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
+            <CheckBox Name="CheckBox_vendable" Content="Vendable ?" HorizontalAlignment="Left" Margin="259,209,0,0" VerticalAlignment="Top" Height="45" Width="254" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsChecked="True"/>
+            <Label Content="Nom" HorizontalAlignment="Left" Margin="186,67,0,0" VerticalAlignment="Top" Height="26" Width="37"/>
+            <Label Content="Description" HorizontalAlignment="Left" Margin="153,117,0,0" VerticalAlignment="Top" Height="26" Width="70"/>
+            <Label Content="Prix" HorizontalAlignment="Left" Margin="194,159,0,0" VerticalAlignment="Top" Height="26" Width="29"/>
+            <Button Name="Valider_Ajouter" Content="Valider" HorizontalAlignment="Left" Margin="247,254,0,0" VerticalAlignment="Top" Width="254" Height="40" Click="Valider_Ajouter_Click"/>
         </Grid>
-
+        <DataGrid Name="Content_Supr_Article" HorizontalAlignment="Left" Height="412" Margin="10,43,0,-5.4" VerticalAlignment="Top" Width="780" Visibility="Visible" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" MinWidth="130"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" MinWidth="130"/>
+                <DataGridTextColumn Header="Prix" Binding="{Binding PrixU}" MinWidth="130"/>
+                <DataGridTextColumn Header="EstVendable" Binding="{Binding EstVendable}" MinWidth="130"/>
+                <DataGridTemplateColumn MinWidth="259">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Suprimer_ADMIN" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5" Content="Supprimer" Click="Suprimer_ADMIN_Click"/> 
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="Content_Edit_Article" HorizontalAlignment="Left" Height="412" Margin="10,43,0,-5.4" VerticalAlignment="Top" Width="780" Visibility="Visible" AutoGenerateColumns="False" IsReadOnly="False" SelectionMode="Single" VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" MinWidth="130"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" MinWidth="130"/>
+                <DataGridTextColumn Header="Prix" Binding="{Binding PrixU}" MinWidth="130"/>
+                <DataGridTextColumn Header="EstVendable" Binding="{Binding EstVendable}" MinWidth="130"/>
+                <DataGridTemplateColumn MinWidth="259">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="Suprimer_ADMIN" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5" Content="Supprimer" Click="Suprimer_ADMIN_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

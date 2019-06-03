@@ -40,7 +40,6 @@ namespace Amazon
 
         private void Ajoute_panier_Click (object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show(Data_Grid_Article.SelectedCells[0].Item.GetType().ToString());
             if (mw.Connected_user != null)
             {
                 mw.Connected_user.Panier = ListeTEMP;

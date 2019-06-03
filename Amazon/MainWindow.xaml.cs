@@ -36,6 +36,7 @@ namespace Amazon
             set { _Connected_user = value; }
 
         }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -46,7 +47,8 @@ namespace Amazon
 
         private void Name_pageShop_Loaded(object sender, RoutedEventArgs e)
         {
-            ((Page_Shop)name_pageShop.Content).Data_Grid_Article.ItemsSource = DB.Liste_Article.Local;
+            ((Page_Shop)name_pageShop.Content).Data_Grid_Article.ItemsSource = DB.Liste_Article.Local.Where(item => item.EstVendable == true); // selectionne uniquement les items vendable
+            //((Page_Shop)name_pageShop.Content).Data_Grid_Article.ItemsSource = DB.Liste_Article.Local;
             ((Page_Shop)name_pageShop.Content).mw = this;
             ((Page_Admin)name_Admin_Frame.Content).mw = this;
         }
