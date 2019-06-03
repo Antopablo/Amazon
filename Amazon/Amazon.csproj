@@ -77,6 +77,12 @@
       <DependentUpon>201905290931433_BDD.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Page_Connexion.xaml.cs">
+      <DependentUpon>Page_Connexion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page_Inscription.xaml.cs">
+      <DependentUpon>Page_Inscription.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page_Shop.xaml.cs">
       <DependentUpon>Page_Shop.xaml</DependentUpon>
     </Compile>
@@ -94,6 +100,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Page_Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page_Connexion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page_Inscription.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

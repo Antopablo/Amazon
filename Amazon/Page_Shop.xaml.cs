@@ -18,10 +18,23 @@ namespace Amazon
   
     public partial class Page_Shop : Page
     {
-        
+        public MainWindow mw { get; set; }
         public Page_Shop()
         {
             InitializeComponent();
         }
+
+        private void Bouton_Login_Click(object sender, RoutedEventArgs e)
+        {
+            Page_Connexion PC = new Page_Connexion(mw);
+            PC.Show();
+        }
+
+        private void Bouton_Sinscrire_Click(object sender, RoutedEventArgs e)
+        {
+            Page_Inscription PI = new Page_Inscription(mw);
+            PI.Show();
+        }
+
     }
 }

@@ -10,19 +10,21 @@
         
         <TabControl Margin="0,0,-0.4,27">
             <TabItem Header="Shop" Width="256"  Height="35">
-                <Frame Name="name_pageShop" Source="Page_Shop.xaml"/>
+                <Frame Name="name_pageShop" Source="Page_Shop.xaml" Loaded="Name_pageShop_Loaded"/>
             </TabItem>
             
-            <TabItem Header="Mon Compte" Width="256"  Height="35">
-                <Frame Source="Page_Mon_Compte.xaml"/>
+            <TabItem Header="Mon Compte" Width="256"  Height="35" Visibility="Collapsed">
+                <Frame Name="name_monCompte" Source="Page_Mon_Compte.xaml"/>
             </TabItem>
-            
-            <TabItem Header="Admin" Width="256"  Height="35">
-                <Frame Source="Page_Admin.xaml"/>
+
+            <TabItem Header="Admin" Width="256"  Height="35"  Visibility="Collapsed">
+                <Frame Name="name_Admin" Source="Page_Admin.xaml"/>
             </TabItem>
 
         </TabControl>
-        <StatusBar Margin="0,393,-0.4,0" Background="Gray"/>
+        <StatusBar  Margin="0,393,-0.4,0" Background="Gray">
+            <TextBlock Name="StatusBar" Width="784" Height="17" />
+        </StatusBar>
 
 
     </Grid>

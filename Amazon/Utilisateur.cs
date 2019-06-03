@@ -9,16 +9,18 @@ using System.Threading.Tasks;
 
 namespace Amazon
 {
+
+    public enum DROIT
+    {
+        ADMIN,
+        USER,
+        GUEST
+    }
+
     [Table("UTILISATEUR")]
     public class Utilisateur : INotifyPropertyChanged
     {
-        public enum DROIT
-        {
-            ADMIN,
-            USER,
-            GUEST
-        }
-
+       
         public Utilisateur()
         {
         }

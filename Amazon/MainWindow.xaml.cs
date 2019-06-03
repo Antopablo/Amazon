@@ -29,13 +29,24 @@ namespace Amazon
             set { _db = value; }
         }
 
+        private Utilisateur _Connected_user;
+        public Utilisateur Connected_user
+        {
+            get { return _Connected_user; }
+            set { _Connected_user = value; }
+
+        }
         public MainWindow()
         {
             InitializeComponent();
             DB = new ApplicationContext();
             DB.Liste_Article.ToList();
-            MessageBox.Show("Nombre d'items : " + DB.Liste_Article.Count(), "Initialisation", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Name_pageShop_Loaded(object sender, RoutedEventArgs e)
+        {
             ((Page_Shop)name_pageShop.Content).Data_Grid_Article.ItemsSource = DB.Liste_Article.Local;
+            ((Page_Shop)name_pageShop.Content).mw = this;
         }
     }
 }
