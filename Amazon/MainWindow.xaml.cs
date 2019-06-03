@@ -48,6 +48,7 @@ namespace Amazon
         {
             ((Page_Shop)name_pageShop.Content).Data_Grid_Article.ItemsSource = DB.Liste_Article.Local;
             ((Page_Shop)name_pageShop.Content).mw = this;
+            ((Page_Admin)name_Admin_Frame.Content).mw = this;
         }
     }
 }

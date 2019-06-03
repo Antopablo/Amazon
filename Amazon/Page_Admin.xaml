@@ -9,9 +9,20 @@
       Title="Page_Admin">
 
     <Grid Background="White">
-        <Button Content="Ajouter Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="38"/>
-        <Button Content="Supprimer Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="38" Margin="265,0,0,0"/>
-        <Button Content="Editer Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="38" Margin="530,0,0,0"/>
+        <Button Content="Ajouter Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="38" Click="Button_Click"/>
+        <Button Content="Supprimer Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270" Height="38" Margin="265,0,0,0"/>
+        <Button Content="Editer Article" HorizontalAlignment="Left" VerticalAlignment="Top" Width="260" Height="38" Margin="540,0,0,0"/>
+        <Grid Name="Grid_ADMIN" HorizontalAlignment="Left" Height="412" Margin="0,38,0,-0.4" VerticalAlignment="Top" Width="800">
+            <TextBox Name="Champ_nom" HorizontalAlignment="Left" Height="45" Margin="250,39,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254" />
+            <TextBox Name="Champ_Description" HorizontalAlignment="Left" Height="45" Margin="250,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
+            <TextBox Name="Champ_Prix" HorizontalAlignment="Left" Height="45" Margin="250,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
+
+            <Label Content="Nom" HorizontalAlignment="Left" Margin="182,48,0,0" VerticalAlignment="Top"/>
+            <Label Content="Description" HorizontalAlignment="Left" Margin="148,111,0,0" VerticalAlignment="Top"/>
+            <Label Content="Prix" HorizontalAlignment="Left" Margin="182,185,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="Vendable ?" HorizontalAlignment="Left" Margin="250,239,0,0" VerticalAlignment="Top" Height="45" Width="254" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        </Grid>
 
     </Grid>
 </Page>

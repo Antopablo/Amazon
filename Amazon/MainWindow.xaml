@@ -18,7 +18,7 @@
             </TabItem>
 
             <TabItem Name="name_Admin" Header="Admin" Width="256"  Height="35" Visibility="Collapsed">
-                <Frame  Source="Page_Admin.xaml"/>
+                <Frame  Name="name_Admin_Frame" Source="Page_Admin.xaml"/>
             </TabItem>
 
         </TabControl>

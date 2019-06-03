@@ -20,9 +20,16 @@ namespace Amazon
     /// </summary>
     public partial class Page_Admin : Page
     {
+        public MainWindow mw { get; set; }
         public Page_Admin()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int price = Int32.Parse(Champ_Prix.Text);
+            mw.DB.Liste_Article.Add(new Article(Champ_nom.Text, price, Champ_Description.Text));
         }
     }
 }
