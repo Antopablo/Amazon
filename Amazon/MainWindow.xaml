@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Accueil" Height="450" Width="800">
     <Grid>
-        
+
         <TabControl Margin="0,0,-0.4,27">
             <TabItem Header="Shop" Width="256"  Height="35">
                 <Frame Name="name_pageShop" Source="Page_Shop.xaml" Loaded="Name_pageShop_Loaded"/>
@@ -22,9 +22,10 @@
             </TabItem>
 
         </TabControl>
-        <StatusBar  Margin="0,393,-0.4,0" Background="Gray">
-            <TextBlock Name="StatusBar" Width="784" Height="17" />
+        <StatusBar  Margin="0,393,401.6,0" Background="Gray">
+            <TextBlock Name="StatusBar" Width="382" Height="17" />
         </StatusBar>
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Name="total_BasDePage" Margin="0,393,-0.4,0" TextWrapping="Wrap" Text="" Width="228" Height="27"/>
 
 
     </Grid>

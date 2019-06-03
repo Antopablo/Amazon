@@ -45,7 +45,9 @@ namespace Amazon
             {
                 mw.Connected_user.Panier = ListeTEMP;
                 mw.Connected_user.Panier.Add((Article)Data_Grid_Article.SelectedCells[0].Item);
-                MessageBox.Show("ok");
+                Bouton_Panier.Content = "Panier : " + mw.Connected_user.Panier.Count + " Article(s)";
+                CalculPanier();
+
             } else
             {
                 MessageBox.Show("Vous devez vous connecter", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -64,14 +66,17 @@ namespace Amazon
 
         private void Bouton_Panier_Click(object sender, RoutedEventArgs e)
         {
-            double tot = 0;
+            
+        }
 
+        private void CalculPanier()
+        {
+            double tot = 0;
             foreach (Article item in mw.Connected_user.Panier)
             {
                 tot += item.PrixU;
             }
-
-            mw.StatusBar.Text = tot.ToString();
+            mw.total_BasDePage.Text = "Total du panier " + tot.ToString() + " €";
         }
     }
 }
