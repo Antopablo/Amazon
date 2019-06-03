@@ -25,7 +25,7 @@
         <StatusBar  Margin="0,393,401.6,0" Background="Gray">
             <TextBlock Name="StatusBar" Width="382" Height="17" />
         </StatusBar>
-        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Name="total_BasDePage" Margin="0,393,-0.4,0" TextWrapping="Wrap" Text="" Width="228" Height="27"/>
+        <TextBlock HorizontalAlignment="Right" TextAlignment="Right" VerticalAlignment="Center" Name="total_BasDePage" Margin="0,393,9.6,0" TextWrapping="Wrap" Text="" Width="218" Height="27"/>
 
 
     </Grid>
