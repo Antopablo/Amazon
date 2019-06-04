@@ -9,6 +9,7 @@
       Title="Page_Mon_Compte">
 
     <Grid>
-        
+        <DataGrid Name="Data_Grid_Historique" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="790" Margin="0,0,0,-0.4"/>
+
     </Grid>
 </Page>

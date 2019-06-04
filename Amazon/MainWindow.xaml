@@ -13,12 +13,12 @@
                 <Frame Name="name_pageShop" Source="Page_Shop.xaml" Loaded="Name_pageShop_Loaded"/>
             </TabItem>
 
-            <TabItem Name="name_monCompte" Header="Mon Compte" Width="256"  Height="35" Visibility="Collapsed">
-                <Frame  Source="Page_Mon_Compte.xaml"/>
+            <TabItem Name="name_monCompte" Header="Mon Compte" Width="256"  Height="35" Visibility="Collapsed" Loaded="Name_monCompte_Loaded">
+                <Frame  Name="name_monCompte_Frame" Source="Page_Mon_Compte.xaml"/>
             </TabItem>
 
             <TabItem Name="name_Admin" Header="Admin" Width="256"  Height="35" Visibility="Collapsed">
-                <Frame  Name="name_Admin_Frame" Source="Page_Admin.xaml"/>
+                <Frame  Name="name_Admin_Frame" Source="Page_Admin.xaml" Loaded="Name_Admin_Frame_Loaded"/>
             </TabItem>
 
         </TabControl>

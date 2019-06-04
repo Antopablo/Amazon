@@ -48,9 +48,19 @@ namespace Amazon
         private void Name_pageShop_Loaded(object sender, RoutedEventArgs e)
         {
             ((Page_Shop)name_pageShop.Content).Data_Grid_Article.ItemsSource = DB.Liste_Article.Local.Where(item => item.EstVendable == true); // selectionne uniquement les items vendable
-            //((Page_Shop)name_pageShop.Content).Data_Grid_Article.ItemsSource = DB.Liste_Article.Local;
             ((Page_Shop)name_pageShop.Content).mw = this;
+
+        }
+
+        private void Name_Admin_Frame_Loaded(object sender, RoutedEventArgs e)
+        {
             ((Page_Admin)name_Admin_Frame.Content).mw = this;
+        }
+
+        private void Name_monCompte_Loaded(object sender, RoutedEventArgs e)
+        {
+            ((Page_Mon_Compte)name_monCompte_Frame.Content).mw = this;
+            ((Page_Mon_Compte)name_monCompte_Frame.Content).Data_Grid_Historique.ItemsSource = DB.Histo.Local;
         }
     }
 }

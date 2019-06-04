@@ -43,5 +43,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Name="Bouton_Payer" Content="Valider mon panier" HorizontalAlignment="Left" Margin="409,10,0,0" VerticalAlignment="Top" Width="147" Height="33" Visibility="Collapsed" Click="Bouton_Payer_Click"/>
     </Grid>
 </Page>

@@ -64,6 +64,7 @@
     </ApplicationDefinition>
     <Compile Include="ApplicationContext.cs" />
     <Compile Include="Article.cs" />
+    <Compile Include="Historique.cs" />
     <Compile Include="Migrations\201905281449582_init.cs" />
     <Compile Include="Migrations\201905281449582_init.Designer.cs">
       <DependentUpon>201905281449582_init.cs</DependentUpon>
@@ -88,6 +89,14 @@
     <Compile Include="Migrations\201906031148322_Essais_panier.Designer.cs">
       <DependentUpon>201906031148322_Essais_panier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906040746247_ajout_historique.cs" />
+    <Compile Include="Migrations\201906040746247_ajout_historique.Designer.cs">
+      <DependentUpon>201906040746247_ajout_historique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906040819403_ajout_historique+heure.cs" />
+    <Compile Include="Migrations\201906040819403_ajout_historique+heure.Designer.cs">
+      <DependentUpon>201906040819403_ajout_historique+heure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Page_Connexion.xaml.cs">
       <DependentUpon>Page_Connexion.xaml</DependentUpon>
@@ -99,6 +108,9 @@
       <DependentUpon>Page_Shop.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commande.cs" />
+    <Compile Include="Paypal.xaml.cs">
+      <DependentUpon>Paypal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilisateur.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page_Shop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paypal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,6 +186,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906031148322_Essais_panier.resx">
       <DependentUpon>201906031148322_Essais_panier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906040746247_ajout_historique.resx">
+      <DependentUpon>201906040746247_ajout_historique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906040819403_ajout_historique+heure.resx">
+      <DependentUpon>201906040819403_ajout_historique+heure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

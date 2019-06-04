@@ -94,6 +94,5 @@ namespace Amazon
             get { return _Panier; }
             set { _Panier = value; }
         }
-
     }
 }

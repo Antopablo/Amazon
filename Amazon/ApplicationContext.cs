@@ -13,5 +13,7 @@ namespace Amazon
 
         public DbSet<Article> Liste_Article { get; set; }
 
+        public DbSet<Historique> Histo { get; set; }
+
     }
 }

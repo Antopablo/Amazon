@@ -22,7 +22,7 @@
             <Label Content="Prix" HorizontalAlignment="Left" Margin="194,159,0,0" VerticalAlignment="Top" Height="26" Width="29"/>
             <Button Name="Valider_Ajouter" Content="Valider" HorizontalAlignment="Left" Margin="247,254,0,0" VerticalAlignment="Top" Width="254" Height="40" Click="Valider_Ajouter_Click"/>
         </Grid>
-        <DataGrid Name="Content_Supr_Article" HorizontalAlignment="Left" Height="412" Margin="10,43,0,-5.4" VerticalAlignment="Top" Width="780" Visibility="Visible" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" VerticalScrollBarVisibility="Auto">
+        <DataGrid Name="Content_Supr_Article" HorizontalAlignment="Left" Height="412" Margin="10,43,0,-5.4" VerticalAlignment="Top" Width="780" Visibility="Collapsed" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" VerticalScrollBarVisibility="Auto">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" MinWidth="130"/>
                 <DataGridTextColumn Header="Description" Binding="{Binding Description}" MinWidth="130"/>
@@ -37,7 +37,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid Name="Content_Edit_Article" HorizontalAlignment="Left" Height="412" Margin="10,43,0,-5.4" VerticalAlignment="Top" Width="780" Visibility="Visible" AutoGenerateColumns="False" IsReadOnly="False" SelectionMode="Single" VerticalScrollBarVisibility="Auto">
+        <DataGrid Name="Content_Edit_Article" HorizontalAlignment="Left" Height="412" Margin="10,43,0,-5.4" VerticalAlignment="Top" Width="780" AutoGenerateColumns="False" IsReadOnly="False" SelectionMode="Single" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" MinWidth="130"/>
                 <DataGridTextColumn Header="Description" Binding="{Binding Description}" MinWidth="130"/>

@@ -71,6 +71,7 @@ namespace Amazon
             Data_Grid_Article_PANIER.ItemsSource = mw.Connected_user.Panier;
             Data_Grid_Article_PANIER.Visibility = Visibility.Visible;
             Bouton_Retour_Shop.Visibility = Visibility.Visible;
+            Bouton_Payer.Visibility = Visibility.Visible;
         }
 
         private void Supprimer_panier_Click(object sender, RoutedEventArgs e)
@@ -105,6 +106,17 @@ namespace Amazon
         {
             Data_Grid_Article_PANIER.Visibility = Visibility.Collapsed;
             Bouton_Retour_Shop.Visibility = Visibility.Collapsed;
+        }
+
+        private void Bouton_Payer_Click(object sender, RoutedEventArgs e)
+        {
+            Historique his = new Historique();
+            his.Liste_Histo.Add(mw.Connected_user.Panier);
+            mw.DB.Histo.Add(his);
+            mw.DB.SaveChanges();
+
+            Paypal pp = new Paypal();
+            pp.Show();
         }
     }
 }

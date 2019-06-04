@@ -21,6 +21,7 @@ namespace Amazon
     public partial class Page_Admin : Page
     {
         public MainWindow mw { get; set; }
+
         public Page_Admin()
         {
             InitializeComponent();
@@ -29,6 +30,8 @@ namespace Amazon
         private void Button_Ajout_Click(object sender, RoutedEventArgs e)
         {
             Content_Ajout_Article.Visibility = Visibility.Visible;
+            Content_Edit_Article.Visibility = Visibility.Collapsed;
+            Content_Supr_Article.Visibility = Visibility.Collapsed;
         }
 
         
@@ -46,12 +49,17 @@ namespace Amazon
         private void Bouton_Supr_Click(object sender, RoutedEventArgs e)
         {
             Content_Supr_Article.Visibility = Visibility.Visible;
+            Content_Ajout_Article.Visibility = Visibility.Collapsed;
+            Content_Edit_Article.Visibility = Visibility.Collapsed;
             Content_Supr_Article.ItemsSource = mw.DB.Liste_Article.Local;
         }
 
         private void Bouton_Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            Content_Ajout_Article.Visibility = Visibility.Collapsed;
+            Content_Edit_Article.Visibility = Visibility.Visible;
+            Content_Supr_Article.Visibility = Visibility.Collapsed;
+            Content_Edit_Article.ItemsSource = mw.DB.Liste_Article.Local;
         }
 
         private void Suprimer_ADMIN_Click(object sender, RoutedEventArgs e)
